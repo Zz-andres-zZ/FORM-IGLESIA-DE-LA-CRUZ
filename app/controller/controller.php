@@ -12,7 +12,7 @@ try {
         $identity_card = isset($_POST['identity_card']) ? trim($_POST['identity_card']) : "";
         $birthday_date = isset($_POST['birthday_date']) ? trim($_POST['birthday_date']) : "";
 
-        $instancia_register = new Users_model();
+        $instancia_register = new Users_model(); 
 
         $instancia_register->name = $name;
         $instancia_register->last_name = $last_name;
