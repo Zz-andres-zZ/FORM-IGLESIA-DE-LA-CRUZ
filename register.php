@@ -8,80 +8,122 @@
     <title>FORM REGISTER</title>
     <style>
         .row {
-            margin: 0;
+            margin: 0 !important;
         }
 
         .content-form {
-            width: 700px;
-            max-width: 100%;
             margin: auto;
             padding: 20px;
-            background-color: #f7f7f7;
+            background-color: #f3f3f3;
             border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-table {
+            margin: auto;
+            padding: 20px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        tr td {
+            text-align: center;
         }
     </style>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 <body>
-
-    <div class="container">
-        <div class="row mt-4">
-            <div class="content-form border-1">
+    <div class="container-fluid">
+        <div class="row g-3">
+            <div class="col-12 col-md-6 content-form border-2">
                 <div class="card-header text-center">
                     <h1>Formulario de Registro</h1>
                 </div>
-                <div class="card-body p-4">
-                    <form calss="" id="form_register">
+                <div class="card-body p-3">
+                    <form method="POST" id="form_register">
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="name" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su nombre">
+                                <span class="invalid-feedback"></span>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="last_name" class="form-label">Apellido</label>
                                 <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Ingrese su apellido">
+                                <span class="invalid-feedback"></span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label">Teléfono</label>
                                 <input type="tel" class="form-control" name="phone" id="phone" placeholder="Ingrese su teléfono">
+                                <span class="invalid-feedback"></span>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="address" class="form-label">Dirección</label>
-                                <input type="text" class="form-control" name="address[addreess]" id="address" placeholder="Ingrese su dirección">
+                                <input type="text" class="form-control" name="address[address]" id="address" placeholder="Ingrese su dirección">
+                                <span class="invalid-feedback"></span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 mb-3">
                                 <label for="state" class="form-label">Estado</label>
                                 <input type="text" class="form-control" name="address[state]" id="state" placeholder="Ingrese su estado">
+                                <span class="invalid-feedback"></span>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="city" class="form-label">Ciudad</label>
                                 <input type="text" class="form-control" name="address[city]" id="city" placeholder="Ingrese su ciudad">
+                                <span class="invalid-feedback"></span>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="neighborhood" class="form-label">Barrio</label>
                                 <input type="text" class="form-control" name="address[neighborhood]" id="neighborhood" placeholder="Ingrese su barrio">
+                                <span class="invalid-feedback"></span>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="date_birth" class="form-label">Fecha de Nacimiento</label>
-                                <input type="date" class="form-control" name="date_birth" id="date_birth">
+                                <label for="birthday_date" class="form-label">Fecha de Nacimiento</label>
+                                <input type="date" class="form-control" name="birthday_date" id="birthday_date">
+                                <span class="invalid-feedback"></span>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="identity_card" class="form-label">Cédula</label>
                                 <input type="text" class="form-control" name="identity_card" id="identity_card" placeholder="Ingrese su cédula">
+                                <span class="invalid-feedback"></span>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <button type="submit" id="register" class="btn btn-primary w-25">Registrar</button>
+                        <div class="d-flex justify-content-evenly">
+                            <input type="reset" id="clear" value="Limpiar campos" class="btn btn-danger">
+                            <input type="submit" id="register" name="register" value="Registrar usuario" class="btn btn-primary">
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 content-table">
+                <div class="table-responsive">
+                    <table id="table" class="table table-striped table-hover table-borderless align-middle m-0">
+                        <thead class="table-light">
+                            <tr class="text-center">
+                                <th>Nº</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Telefono</th>
+                                <th>Dirección</th>
+                                <th>Estado</th>
+                                <th>Ciudad</th>
+                                <th>Barrio</th>
+                                <th>Fecha nacimiento</th>
+                                <th>Cedula</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider"></tbody>
+                    </table>
                 </div>
             </div>
         </div>
