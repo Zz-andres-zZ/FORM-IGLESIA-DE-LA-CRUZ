@@ -10,7 +10,7 @@ jQuery(() => {
                 const data_response = JSON.parse(response);
                 alert("Registro con exito");
                 $("#form_register .form-control").val("");
-                console.log("response2", data_response.records);
+                /* console.log("response2", data_response.records); */
                 $("#table tbody").empty();
                 data_registers(data_response.records);
                 return;
