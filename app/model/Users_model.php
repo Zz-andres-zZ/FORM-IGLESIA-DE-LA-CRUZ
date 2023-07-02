@@ -7,6 +7,7 @@ class Users_model {
     public $name;
     public $last_name;
     public $phone;
+    public $email;
     public $address;
     public $state;
     public $city;
@@ -18,11 +19,12 @@ class Users_model {
         try {
             $instance = new Database();
             $pdo = $instance->conection();
-            $sql = "INSERT INTO `tbl_users` (`name`,`last_name`, `phone`, `address`, `state`, `city`, `neighborhood`, `identity_card`, `birthday_date`) VALUES (:name, :last_name, :phone, :address, :state, :city, :neighborhood, :identity_card, :birthday_date)";
+            $sql = "INSERT INTO `tbl_users` (`name`,`last_name`, `phone`,`email`, `address`, `state`, `city`, `neighborhood`, `identity_card`, `birthday_date`) VALUES (:name, :last_name, :phone, :email, :address, :state, :city, :neighborhood, :identity_card, :birthday_date)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(":name", $this->name);
             $stmt->bindParam(":last_name", $this->last_name);
             $stmt->bindParam(":phone", $this->phone);
+            $stmt->bindParam(":email", $this->email);
             $stmt->bindParam(":address", $this->address);
             $stmt->bindParam(":state", $this->state);
             $stmt->bindParam(":city", $this->city);

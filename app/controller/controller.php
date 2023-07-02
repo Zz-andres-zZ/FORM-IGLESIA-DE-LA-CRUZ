@@ -11,6 +11,7 @@ try {
             "name" => $_POST['name'] ?? "",
             "last_name" => $_POST['last_name'] ?? "",
             "phone" => $_POST['phone'] ?? "",
+            "email" => $_POST['email'] ?? "",
             "address" => $_POST['address']['address'] ?? "",
             "state" => $_POST['address']['state'] ?? "",
             "city" => $_POST['address']['city'] ?? "",
@@ -23,6 +24,10 @@ try {
             if (empty($field)) {
                 $php_errormsg[$id] = "Este campo es obligatorio";
             }
+        }
+
+        if (!filter_var($data_post["email"], FILTER_VALIDATE_EMAIL)) {
+            $php_errormsg[] = "El email es invalido";
         }
 
         if (!filter_var($data_post["phone"], FILTER_VALIDATE_FLOAT)) {
