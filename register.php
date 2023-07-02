@@ -88,7 +88,7 @@
                             <div class="row row-group-imput">
                                 <div class="col-12">
                                     <label for="address" class="form-label">Dirección</label>
-                                    <textarea class="form-control" name="address[address]" id="addresss" cols="30" rows="3"></textarea>
+                                    <textarea class="form-control" name="address[address]" id="address" cols="30" rows="3"></textarea>
                                     <span class="invalid-feedback"></span>
                                 </div>
                             </div>

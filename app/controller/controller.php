@@ -16,7 +16,7 @@ try {
             "state" => $_POST['address']['state'] ?? "",
             "city" => $_POST['address']['city'] ?? "",
             "neighborhood" => $_POST['address']['neighborhood'] ?? "",
-            "identity_card" => $_POST['identity_card'] ?? "",
+            "dni" => $_POST['dni'] ?? "",
             "birthday_date" => $_POST['birthday_date'] ?? "",
         ];
 
@@ -43,9 +43,9 @@ try {
         // CREAMOS UNA INSTANCIA DEL MODELO DE USUARIO
         $instancia_register = new Users_model();
 
-        // VERIFICAMOS SI YA EXISTE UN VALOR PARA "identity_card" EN LA BASE DE DATOS
-        if ($instancia_register->checkIdentityCardExists($data_post["identity_card"])) {
-            $php_errormsg["identity_card"] = "Este documento ya existe";
+        // VERIFICAMOS SI YA EXISTE UN VALOR PARA "dni" EN LA BASE DE DATOS
+        if ($instancia_register->checkIdentityCardExists($data_post["dni"])) {
+            $php_errormsg["dni"] = "Este documento ya existe";
             http_response_code(422);
             echo json_encode($php_errormsg);
             die;
