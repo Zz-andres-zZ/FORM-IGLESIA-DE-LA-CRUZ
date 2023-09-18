@@ -1,7 +1,3 @@
-<?php
-    require_once 'config.php';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORM REGISTER</title>
-    <link rel="stylesheet" href="asset/bs/bootstrap.min.css?v=<?=SITE_V?>" >
-    <link rel="stylesheet" href="asset/css/main.css?v=<?=SITE_V?>">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="asset/bs/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/main.css">
 </head>
 
 <body>
+
     <div class="container-fluid">
         <div class="row">
             <div class="content">
@@ -108,9 +106,9 @@
         </div>
     </div>
 
-    <script src="asset/jquery/jquery.js?v=<?=SITE_V?>"></script>
-    <script src="asset/bs/bs.js?v=<?=SITE_V?>"></script>
-    <script src="asset/js/auth.js?v=<?=SITE_V?>"></script>
+    <script src="asset/jquery/jquery.js"></script>
+    <script src="asset/bs/bs.js"></script>
+    <script src="asset/js/auth.js"></script>
 
 </body>
 

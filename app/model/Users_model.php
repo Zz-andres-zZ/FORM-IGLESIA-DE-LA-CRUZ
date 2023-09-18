@@ -1,5 +1,6 @@
 <?php
-require_once "../model/Database.php";
+
+require_once "../model/DBConnection.php";
 
 class Users_model {
 
@@ -25,11 +26,11 @@ class Users_model {
         try {
             // Validar que los campos obligatorios no estén vacíos antes de insertar.
             if (empty($this->name) || empty($this->identity_card) || empty($this->email)) {
-                return 400; // Bad Request
+                return 422; // Bad Request
             }
 
-            $instance = new Database();
-            $pdo = $instance->conection();
+            $instance = new DBConnection();
+            $pdo = $instance->connect();
             $sql = "INSERT INTO `tbl_users` (`name`,`last_name`, `phone`,`email`, `address`, `state`, `city`, `neighborhood`, `identity_card`, `birthday_date`) VALUES (:name, :last_name, :phone, :email, :address, :state, :city, :neighborhood, :identity_card, :birthday_date)";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(":name", $this->name);
@@ -45,6 +46,12 @@ class Users_model {
             $stmt->execute();
             return 200; // OK
         } catch (PDOException $error) {
+            $response = ['Error' => 'error' . $error->getMessage()];
+            echo "<pre>";
+            print_r([
+                'ERROR REGISTRAR USUARIO' => json_encode($response)
+            ]);
+            echo "</pre>";
             // Manejar el error de manera apropiada, por ejemplo, puedes registrar el error en un archivo de registro.
             return 500; // Internal Server Error
         }
@@ -58,8 +65,8 @@ class Users_model {
      * @throws PDOException Si ocurre un error en la base de datos.
      */
     public function checkIdentityCardExists($identityCard) {
-        $instance = new Database();
-        $pdo = $instance->conection();
+        $instance = new DBConnection();
+        $pdo = $instance->connect();
         $query = "SELECT COUNT(*) FROM `tbl_users` WHERE identity_card = :identityCard";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":identityCard", $identityCard);
@@ -75,8 +82,8 @@ class Users_model {
      * @throws PDOException Si ocurre un error en la base de datos.
      */
     public function get_data_database() {
-        $instance = new Database();
-        $pdo = $instance->conection();
+        $instance = new DBConnection();
+        $pdo = $instance->connect();
         $stmt = $pdo->prepare("SELECT * FROM `tbl_users`");
         $stmt->execute();
         $resul = $stmt->fetchAll(PDO::FETCH_ASSOC);
