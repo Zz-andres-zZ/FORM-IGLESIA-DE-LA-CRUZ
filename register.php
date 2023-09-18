@@ -108,7 +108,8 @@
 
     <script src="asset/jquery/jquery.js"></script>
     <script src="asset/bs/bs.js"></script>
-    <script src="asset/js/auth.js"></script>
+    <!-- <script src="asset/js/auth.js"></script> -->
+    <script src="asset/js/dataOff.js"></script>
 
 </body>
 
