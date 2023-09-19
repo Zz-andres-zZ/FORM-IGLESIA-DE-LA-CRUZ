@@ -1,6 +1,3 @@
-<?php
-    require_once 'config.php';
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -10,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORM REGISTER</title>
-    <link rel="stylesheet" href="asset/bs/bootstrap.min.css?v=<?=SITE_V?>" >
-    <link rel="stylesheet" href="asset/css/main.css?v=<?=SITE_V?>">
+    <link rel="stylesheet" href="asset/bs/bootstrap.min.css?v=1.1.0" >
+    <link rel="stylesheet" href="asset/css/main.css?v=1.1.0">
 </head>
 
 <body>
@@ -32,7 +29,7 @@
                                     <input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su nombre">
                                     <span class="invalid-feedback"></span>
                                 </div>
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-6 group-input">
                                     <label for="last_name" class="form-label">Apellido</label>
                                     <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Ingrese su apellido">
                                     <span class="invalid-feedback"></span>
@@ -47,8 +44,8 @@
                                 </div>
 
                                 <div class="col-12 col-md-6 group-input">
-                                    <label for="birthday_date" class="form-label">Fecha de Nacimiento</label>
-                                    <input type="date" class="form-control" name="birthday_date" id="birthday_date">
+                                    <label for="birth_date" class="form-label">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" name="birth_date" id="birth_date">
                                     <span class="invalid-feedback"></span>
                                 </div>
                             </div>
@@ -70,30 +67,30 @@
                             <div class="row row-group-imput">
                                 <div class="col-md-4 group-input">
                                     <label for="state" class="form-label">Estado</label>
-                                    <input type="text" class="form-control" name="address[state]" id="state" placeholder="Ingrese su estado">
+                                    <input type="text" class="form-control" name="state" id="state" placeholder="Ingrese su estado">
                                     <span class="invalid-feedback"></span>
                                 </div>
                                 <div class="col-md-4 group-input">
                                     <label for="city" class="form-label">Ciudad</label>
-                                    <input type="text" class="form-control" name="address[city]" id="city" placeholder="Ingrese su ciudad">
+                                    <input type="text" class="form-control" name="city" id="city" placeholder="Ingrese su ciudad">
                                     <span class="invalid-feedback"></span>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 group-input">
                                     <label for="neighborhood" class="form-label">Barrio</label>
-                                    <input type="text" class="form-control" name="address[neighborhood]" id="neighborhood" placeholder="Ingrese su barrio">
+                                    <input type="text" class="form-control" name="neighborhood" id="neighborhood" placeholder="Ingrese su barrio">
                                     <span class="invalid-feedback"></span>
                                 </div>
                             </div>
 
                             <div class="row row-group-imput">
-                                <div class="col-12">
-                                    <label for="address" class="form-label">Dirección</label>
-                                    <textarea class="form-control" name="address[address]" id="address" cols="30" rows="3"></textarea>
+                                <div class="col-12 group-input">
+                                    <label for="address_reference" class="form-label">Dirección referencia</label>
+                                    <textarea class="form-control" name="address_reference" id="address_reference" cols="30" rows="3"></textarea>
                                     <span class="invalid-feedback"></span>
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center" id="bts_actions_container">
                                 <div class="col-6 text-center">
                                     <input type="reset" id="clear" value="Limpiar campos" class="btn btn-danger">
                                 </div>
@@ -108,9 +105,9 @@
         </div>
     </div>
 
-    <script src="asset/jquery/jquery.js?v=<?=SITE_V?>"></script>
-    <script src="asset/bs/bs.js?v=<?=SITE_V?>"></script>
-    <script src="asset/js/auth.js?v=<?=SITE_V?>"></script>
+    <script src="asset/jquery/jquery.js?v=1.1.0"></script>
+    <script src="asset/bs/bs.js?v=1.1.0"></script>
+    <script src="asset/js/register.js?v=1.1.0"></script>
 
 </body>
 
