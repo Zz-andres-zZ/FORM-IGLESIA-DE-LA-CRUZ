@@ -7,10 +7,48 @@ const API = {
 }
 
 
+let objetoJSON = {
+    data: [
+        {
+        "nombre": "John Doe",
+        "edad": 30,
+        "ciudad": "Maracaibo"
+        },
+        {
+            "nombre": "John Doe",
+            "edad": 30,
+            "ciudad": "Maracaibo"
+        },
+        {
+            "nombre": "John Doe",
+            "edad": 30,
+            "ciudad": "Maracaibo"
+        },
+    ]
+}
+
+
 jQuery(() => {
 
     handle_submit_form();
     handle_click_clear();
+
+    localStorage.setItem("data", JSON.stringify(objetoJSON));
+    const data = localStorage.getItem("data");
+    console.log('data', JSON.parse(data))
+
+    const persona = {
+        "nombre": "John Doe",
+        "edad": 30,
+        "ciudad": "Maracaibo"
+    };
+
+    const new_data = JSON.parse(localStorage.getItem("data"));
+    new_data.data.push(persona);
+    localStorage.setItem("data", JSON.stringify(new_data))
+
+    const data_new = localStorage.getItem("data");
+    console.log('data_new', JSON.parse(data_new))
 
 });
 
